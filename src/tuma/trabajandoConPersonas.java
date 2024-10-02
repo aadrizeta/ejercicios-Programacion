@@ -1,4 +1,5 @@
 package tuma;
+import java.util.Scanner;
 
 public class trabajandoConPersonas {
 
@@ -17,7 +18,9 @@ public class trabajandoConPersonas {
        //Perro perro1 = new Perro("Buddy", 5);
        //perro1.hacerRuido();
 
+        Scanner sc = new Scanner(System.in);
         Calculadora calculado= new Calculadora();
+        sc.close();
     }
 
 
