@@ -1,0 +1,12 @@
+Crear una clase producto con atributos (nombre, precio y cantidad).
+Luego se ha de crear una clase principal (main) que gestiona nuestra tienda.
+El programa deberá:
+ ⁃ Añadir productos en el inventario
+ ⁃ Mostrar todos los productos
+ ⁃ Actualizar la cantidad y por aparte su precio de un producto especifico
+ ⁃ Actualizar la cantidad de un producto en especifico
+ ⁃ Eliminar un producto del inventario (Eliminar productos intermedios. No puede ser el primero ni el último)
+ ⁃ Calcular el valor total del inventario (suma de precio * cantidad de cada producto) de todos los productos
+ Se han de usar ArrayLists
+ subir a github
+
