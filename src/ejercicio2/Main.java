@@ -2,6 +2,9 @@ package ejercicio2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
@@ -28,6 +31,44 @@ public class Main {
         tablet1.mostrarInfo();
         tablet1.conectarWifi();
         tablet1.desconectarWifi();
+
+        ArrayList<Smartphone> smartphones = new ArrayList<>();
+        ArrayList<Tablet>tablets = new ArrayList<>();
+
+        String rutaArchivo = "src/ejercicio2/mis-dispositivos.txt";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo))) {
+
+            String line;
+            reader.readLine();
+
+            while ((line = reader.readLine()) != null) {
+                String[] datos = line.split(",");
+                String tipo = datos[0].toLowerCase();
+                String marca = datos[1];
+
+                if (tipo.equalsIgnoreCase("smartphone")) {
+                    Smartphone smartphone = new Smartphone("Apagado", marca);
+                    smartphones.add(smartphone);
+                } else if (tipo.equalsIgnoreCase("tablet")){
+                    Tablet tablet = new Tablet("Apagado", marca);
+                    tablets.add(tablet);
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("\nSmartphones:");
+        for (Smartphone smartphone : smartphones) {
+            smartphone.mostrarInfo();
+        }
+
+        System.out.println("\nTablets:");
+        for (Tablet tablet : tablets) {
+            tablet.mostrarInfo();
+        }
 
         sc.close();
     }

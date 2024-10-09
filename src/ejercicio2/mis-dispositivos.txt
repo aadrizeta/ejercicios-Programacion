@@ -1,0 +1,13 @@
+//AÑADIR DISPOSITIVOS (smartphone/tablet, marca)
+smartphone, Samsung
+tablet, Apple
+Smartphone, Huawei
+tablet, Microsoft
+smartphone, Xiaomi
+tablet, Lenovo
+Smartphone, Google
+tablet, Samsung
+Smartphone, OnePlus
+tablet, Amazon
+Smartphone, Nokia
+Smartphone, Apple
