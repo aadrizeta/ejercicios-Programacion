@@ -2,8 +2,8 @@ package tuma;
 
 public class Perro extends Animal  {
 
-    public  Perro(String nombre, int edad) {
-        super(nombre, edad);
+    public  Perro(String raza, String nombre, int edad) {
+        super(raza, nombre, edad);
     }
 
     public void hacerRuido() {
