@@ -1,0 +1,6 @@
+Angela Veron,20,DAW,7.12
+Carlos Gómez,22,DAW,8.75
+Lucía Pérez,19,ASIR,6.45
+Javier Martín,21,DAW,7.90
+Sofía Hernández,20,ASIR,9.10
+Miguel Ángel,23,DAW,5.85
