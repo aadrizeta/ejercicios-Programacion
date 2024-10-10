@@ -10,7 +10,6 @@ public class Main {
 
         ArrayList<Alumno> alumnos = new ArrayList<>();
 
-        // Lectura del archivo y carga de datos en la lista
         try (BufferedReader reader = new BufferedReader(new FileReader(rutaArchivo))){
 
             String linea;
@@ -26,7 +25,6 @@ public class Main {
                 Alumno alumno = new Alumno(nombre, edad, curso, notaMedia);
                 alumnos.add(alumno);
             }
-
 
         } catch (Exception e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
