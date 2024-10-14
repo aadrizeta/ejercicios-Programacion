@@ -1,0 +1,26 @@
+
+Crear un programa con los siguientes requisitos. Se ha de crear una Clase llamado FileManager.
+En él tendremos que declarar un constructor al que le llegará una ruta de un archivo (String).
+En esta clase tendremos los métodos Exists (retorna un valor Boolean), importFromFile(void function),
+getDataFromFile(retorna un ArrayList de tipo Figura).
+
+Por otra parte, tendremos una clase abstracta llamada Figura (clase Padre), añadir los métodos que son necesarios.  
+Crearemos clases hijas llamadas Rectangulo, Circulo y Cuadrado.
+
+Para saber cuál vamos a instanciar e introducir dentro del ArrayList que usamos en importFromFile deberemos de conocer la primera palabra de cada línea en el archivo TXT.
+
+El archivo TXT tendrá la siguiente estructura:
+- rectangulo 10 10 480 480 #ccccce
+- rectangulo 10 15 350 350 #fff0f0
+- circulo 250 250 100 #aaaaaa
+- cuadrado 300 300 #000000
+
+Como podéis ver, la primera palabra es el tipo de figura con la que vamos a trabajar. Los siguientes valores numéricos son las dimensiones de cada figura.
+Finalmente, el valor seguido del # es el color de la figura. Hay que almacenar el color junto al #.
+
+Cada clase debe de tener su propio método para ver por consola tanto la medida como el color.
+
+Si una línea no tiene color, es decir, no tiene "#...", la figura no la deberemos de almacenar en el array.
+En este caso, imprimiremos por pantalla, Figura no válida. Debéis de añadir una línea en el fichero TXT que muestre este caso.
+
+Finalmente, crearemos un fichero en otro método dentro de FileManager que cree un archivo TXT llamado resultados.txt donde se almacenarán todos los métodos toString de cada figura.

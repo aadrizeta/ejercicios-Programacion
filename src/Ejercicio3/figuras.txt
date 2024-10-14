@@ -1,0 +1,16 @@
+cuadrado,5,#FF5733
+rectangulo,8,6,#33FF57
+circulo,4,#3357FF
+cuadrado,10,#FF33A6
+rectangulo,12,4,#A633FF
+circulo,7,#FF33F6
+cuadrado,3,#00FF00
+rectangulo,5,7,#FFAA00
+circulo,6,#1122AA
+cuadrado,8,#BB33CC
+rectangulo,4,9,#223344
+circulo,9,#FF0000
+cuadrado,12,#00AAFF
+rectangulo,10,5
+circulo,11,#FF7733
+cuadrado,15,#88FF22
