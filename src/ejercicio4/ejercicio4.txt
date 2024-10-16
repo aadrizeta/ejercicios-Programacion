@@ -1,0 +1,11 @@
+Crearemos un archivo llamado entrada.txt con el contenido:
+
+Este es un archivo de ejemplo
+Aprendiendo a usar FileInputStream y FileOutputStream
+Trabajando con archivos JAVA
+
+Se ha de escribir un programa en Java que lea el archivo TXT
+y luego escriba el mismo contenido en otro archivo llamado salida.bin.
+
+# Hay que asegurarse de leer el archivo en bloques bytes
+y escribirlo en el archivo de salida en modo binario.
