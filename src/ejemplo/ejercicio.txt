@@ -1,0 +1,18 @@
+Objetos Serializables
+Crea un programa en JAVA que gestione una lista de empleados de una empresa. Los
+empleados tienen los siguientes atributos:
+- Nombre (String)
+- Edad (int)
+- Salario (double)
+
+El programa debe tener las siguientes funcionalidades:
+1. Serializar la lista de empleados en un archivo empleados.ser cuando el usuario lo
+indique.
+2. Deserializar la lista de empleados desde el archivo empleados.ser y mostrar la
+información de los empleados en pantalla.
+3. Permitir al usuario agregar nuevos empleados a la lista antes de serializarla.
+
+Requisitos
+- Implementar la interfaz Serializable en la clase Empleado.
+- Usar las instancias correspondientes de Objetos para serializar y deserializar.
+- Asegurarse de manejar las posibles excepciones correctamente.
