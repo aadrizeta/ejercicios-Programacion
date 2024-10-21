@@ -18,4 +18,14 @@ public class Ave extends Animal{
                 ", edad=" + edad +
                 '}';
     }
+
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public String getTipo() {
+        return "Animal";
+    }
 }

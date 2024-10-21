@@ -9,24 +9,24 @@ import java.util.Scanner;
 
 public class Zoologico {
     
-    private ArrayList<Animal> animales;
+    private ArrayList<Gestionable> animalesCuidadores;
 
     public Zoologico(){
-        animales = new ArrayList<>();
+        animalesCuidadores = new ArrayList<>();
     }
     
     public void agregarMamifero(String nombre, int edad, boolean tienePelo){
         Mamifero mamifero = new Mamifero(nombre, edad, tienePelo);
-        animales.add(mamifero);
+        animalesCuidadores.add(mamifero);
     }
     
     public void agregarAve(String nombre, int edad, boolean puedeVolar){
 
         Ave ave = new Ave(nombre, edad, puedeVolar);
-        animales.add(ave);
+        animalesCuidadores.add(ave);
     }
     
-    public void AgregarAnimal(){
+    public void agregarAnimal(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca el tipo de Animal (Ave/Mamifero): ");
         String tipo = sc.next().toLowerCase();
@@ -79,9 +79,20 @@ public class Zoologico {
                 System.out.println("El tipo de animal introducido no es válido. Debe ser Ave o Mamifero.");
             }
         }
+        sc.close();
     }
-    public ArrayList getAnimales(){
-        return animales;
+
+    public void agregarCuidador(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduzca el nombre del cuidador: ");
+        String nombre = sc.next().toLowerCase();
+        Cuidador cuidador = new Cuidador(nombre);
+        animalesCuidadores.add(cuidador);
+
+    }
+
+    public ArrayList getAnimalesCuidadores(){
+        return animalesCuidadores;
     }
     public void escribir(ArrayList<Animal>animales, String ruta){
         try (FileOutputStream fos = new FileOutputStream(ruta);
