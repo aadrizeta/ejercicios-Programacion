@@ -1,0 +1,20 @@
+
+Se desea desarrollar un sistema de gestión de un zoológico donde
+cada animal tiene características específicas dependiendo de su especie.
+El zoo puede tener diferentes tipos de animales, mamíferos y aves y
+queremos guardar toda la información en un archivo para poder recuperarla posteriormente.
+
+El programa debe:
+- Clase Animal (abstracta) que incluye atributos comunes como nombre y edad.
+- Clase Mamífero y Ave que extienden de Animal. Cada una debe de tener atributos específicos.
+  - Los mamíferos tienen un atributo adicional: tienePelo() -> boolean
+  - Las Aves tienen un atributo adicional: puedeVolar() -> boolean
+  
+Clase Zoologico:
+- La clase Zoologico contiene una lista de animales y permite agregar animales, listar todos
+los animales y guardar/recuperar la lista de animales usando serialización y deserialización.
+
+El programa debe:
+- Permitir al usuario agregar mamíferos o aves al zoológico.
+- Serializar la lista de animales en un archivo binario (.bin o .ser).
+- Deserializar la lista y mostrar los animales en el zoológico cuando se vuelva a abrir el programa.
