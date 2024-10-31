@@ -1,0 +1,142 @@
+package EjercicioRepasoExamen;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class GestorInventario {
+
+    private static final String filePath = "C:\\Users\\ALUMNO\\Proyectos_IntelliJ\\Antonio\\src\\EjercicioRepasoExamen\\productos.txt";
+
+    public static void main(String[] args) {
+        ArrayList<Producto> productos = new ArrayList<>();
+        File archivo = new File(filePath);
+
+        // Verificar y mostrar la información del archivo
+        mostrarInfoArchivo(archivo);
+
+        // Leer inventario si el archivo existe
+        if (archivo.exists()) {
+            leerInventario(archivo, productos);
+        }
+
+        // Agregar nuevos productos
+        Scanner sc = new Scanner(System.in);
+        boolean agregar = true;
+        while (agregar) {
+            System.out.println("¿Desea agregar un nuevo producto? (si/no)");
+            String respuesta = sc.next();
+            if (respuesta.equalsIgnoreCase("no")) {
+                agregar = false;
+            } else {
+                System.out.println("Introduce el código del producto: ");
+                String cod = sc.next();
+                System.out.println("Introduce el nombre del producto: ");
+                String nombre = sc.next();
+                System.out.println("Introduce la cantidad del producto: ");
+                int cantidad = sc.nextInt();
+                System.out.println("Introduce el precio del producto: ");
+                double precio = sc.nextDouble();
+
+                productos.add(new Producto(cod, nombre, cantidad, precio));
+            }
+        }
+
+        // Guardar productos en archivo
+        agregarProductosArchivo(archivo, productos);
+        mostrarInfoArchivo(archivo);
+    }
+
+    public static void mostrarInfoArchivo(File file) {
+        if (file.exists()) {
+            System.out.println("El archivo existe. Tamaño: " + file.length() + " bytes.");
+        } else {
+            System.out.println("El archivo no existe.");
+        }
+    }
+
+    public static void leerInventario(File file, ArrayList<Producto> productos) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] datos = linea.split("|"); // Suponiendo que los datos están separados por comas
+                if (datos.length == 4) {
+                    String cod = datos[0].trim();
+                    String nombre = datos[1].trim();
+                    int cantidad = Integer.parseInt(datos[2].trim());
+                    double precio = Double.parseDouble(datos[3].trim());
+                    productos.add(new Producto(cod, nombre, cantidad, precio));
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e);
+        }
+    }
+
+    public static void agregarProductosArchivo(File file, ArrayList<Producto> productos) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))) { // true para añadir en vez de sobrescribir
+            for (Producto producto : productos) {
+                bw.write(producto.getCod() + "|" + producto.getNombre() + "|" + producto.getCantidad() + "|" + producto.getPrecio());
+                bw.newLine();
+            }
+            System.out.println("Inventario actualizado en el archivo.");
+        } catch (IOException e) {
+            System.out.println("Error al escribir en el archivo: " + e);
+        }
+    }
+}
+package EjercicioRepasoExamen;
+
+import java.io.Serializable;
+
+public class Producto implements Serializable {
+
+    private String cod;
+    private String nombre;
+    private int cantidad;
+    private double precio;
+
+    public Producto(String cod, String nombre, int cantidad, double precio) {
+        this.cod = cod;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.precio = precio;
+    }
+
+    public String getCod() {
+        return cod;
+    }
+
+    public void setCod(String cod) {
+        this.cod = cod;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    @Override
+    public String toString() {
+        return "\n" + nombre + "| " + cantidad + "| " + precio;
+    }
+}

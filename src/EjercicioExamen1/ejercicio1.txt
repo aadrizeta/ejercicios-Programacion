@@ -1,0 +1,18 @@
+Ejercicio 1:
+Desarrolla un programa para gestionar un inventario de productos de una tienda. El programa debe leer
+un archivo de texto que contiene los datos de los productos, agregar nuevos productos de forma manual y guardar el inventario actualizado.
+Además, debe de verificar la existencia del archivo. Si el archivo existe, mostrará en consola los datos del archivo.
+Si el archivo no existe, deberá de mostrar por pantalla "el archivo no existe".
+Requisitos:
+- Define una clase Producto con los atributos:
+* String cod (código único del producto)
+*String nombre
+* int cantidad
+* double precio
+incluye método toString() que retorne: "[nombre] | [cantidad] | [precio]"
+- Clase Gestor Inventario
+
+* Implementa métodos para gestionar el archivo de inventario utilizando FileReader, FileWriter y File *ArrayList<Producto>: almacenar los productos
+* Leer Inventario (File file): leer los productos desde el archivo y crear instancias de Producto con el contenido del archivo.
+* agregarProductos Archivo (File file): Añadir los productos a un archivo .txt
+* mostrarInfoArchivo (File file): muestra si el archivo existe o no y el tamaño en bytes del archivo (si existe)]
